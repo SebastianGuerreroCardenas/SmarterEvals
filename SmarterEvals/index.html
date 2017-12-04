@@ -7,7 +7,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
 	<!-- Page Title -->
 	<title>SmarterEvals</title>
 	<meta name="author" content="Team 14">
@@ -21,17 +21,17 @@
 
  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
     	<ul class="navbar-nav mr-auto">
-      		<li class="nav-item home_nav">
-        		<a class="nav-link" href="#">Home</a>
+      		<li class="nav-item home_nav active" data-id='home'>
+        		<a class="nav-link" href="?report=home">Home</a>
       		</li>
-			<li class="nav-item student_nav">
-				<a class="nav-link" href="#">Students</a>
+			<li class="nav-item student_nav" data-id='student'>
+				<a class="nav-link" href="?report=student">Students</a>
 			</li>
-			<li class="nav-item professor_nav">
-				<a class="nav-link" href="#">Professors</a>
+			<li class="nav-item professor_nav" data-id='proffesor'>
+				<a class="nav-link" href="?report=professor">Professors</a>
 			</li>
-			<li class="nav-item admin_nav">
-				<a class="nav-link" href="#">Administrators</a>
+			<li class="nav-item admin_nav" data-id="admin">
+				<a class="nav-link" href="?report=admin">Administrators</a>
 			</li>
 		</ul>
   </div>
@@ -39,15 +39,26 @@
 
 <body>
 	<div class="container-fluid home">
-		<h1 class="center">Weclome to SmarterEvals!</h1>
+		<div class="row">
+			<h1 class="center">Weclome to SmarterEvals!</h1>
+		</div>
+
+		<div id="reportDiv">
+			
+		</div>
+
 	</div>
-	<div class="container-fluid admin hidden">
+
+
+
+
+	<div class="container-fluid hidden reports" id="adminReport">
 		<iframe width="1500" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZGU3ZDBkZDgtNWFlOC00OTM1LThiYzQtN2ZmYTRhOGQyZWZkIiwidCI6ImE3MGE1ODNlLWRmNDEtNDRmYy1iZjQxLTUxNWQwNzJiMTk2YSIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
 	</div>
-	<div class="container-fluid student hidden">
+	<div class="container-fluid hidden reports"  id="student">
 		<iframe width="1500" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiMTdiODdjM2QtZWE4NC00OWFkLWIwMmItMjMwZjIzZTFhOThhIiwidCI6ImE3MGE1ODNlLWRmNDEtNDRmYy1iZjQxLTUxNWQwNzJiMTk2YSIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
 	</div>
-	<div class="container-fluid professor hidden">
+	<div class="container-fluid hidden reports" id="professor">
 		<iframe width="1500" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiYmIyMGIwNzMtZjk5MC00OTU3LWE3ZWUtZGZkNjQzODdjNjM1IiwidCI6ImE3MGE1ODNlLWRmNDEtNDRmYy1iZjQxLTUxNWQwNzJiMTk2YSIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
 	</div>
 </body>
